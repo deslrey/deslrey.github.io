@@ -16,24 +16,24 @@
   <meta name="author" content="肖">
   <meta name="keywords" content="">
   
-    <meta name="description" content="黑马点评商户查询缓存练习题">
+    <meta name="description" content="Docker配置Neo4j">
 <meta property="og:type" content="article">
-<meta property="og:title" content="黑马点评">
-<meta property="og:url" content="https://1deslre.github.io/2024/02/03/%E9%BB%91%E9%A9%AC%E7%82%B9%E8%AF%84/index.html">
+<meta property="og:title" content="Linux配置Neo4j">
+<meta property="og:url" content="https://1deslre.github.io/2024/02/07/Linux%E9%85%8D%E7%BD%AENeo4j/index.html">
 <meta property="og:site_name" content="deslre">
-<meta property="og:description" content="黑马点评商户查询缓存练习题">
+<meta property="og:description" content="Docker配置Neo4j">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://1deslre.github.io/img/2024%E5%B9%B42%E6%9C%883%E6%97%A516%E7%82%B953%E5%88%86.jpg">
-<meta property="article:published_time" content="2024-02-03T08:49:16.000Z">
-<meta property="article:modified_time" content="2024-02-07T07:01:03.174Z">
+<meta property="og:image" content="https://1deslre.github.io/img/2024%E5%B9%B42%E6%9C%887%E6%97%A514%E7%82%B949%E5%88%86.jpg">
+<meta property="article:published_time" content="2024-02-07T06:39:40.000Z">
+<meta property="article:modified_time" content="2024-02-07T07:00:42.152Z">
 <meta property="article:author" content="肖">
-<meta property="article:tag" content="黑马点评">
+<meta property="article:tag" content="Neo4j">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://1deslre.github.io/img/2024%E5%B9%B42%E6%9C%883%E6%97%A516%E7%82%B953%E5%88%86.jpg">
+<meta name="twitter:image" content="https://1deslre.github.io/img/2024%E5%B9%B42%E6%9C%887%E6%97%A514%E7%82%B949%E5%88%86.jpg">
   
   
   
-  <title>黑马点评 - deslre</title>
+  <title>Linux配置Neo4j - deslre</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -228,7 +228,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="黑马点评"></span>
+            <span id="subtitle" data-typed-text="Linux配置Neo4j"></span>
           
         </div>
 
@@ -239,8 +239,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-03 16:49" pubdate>
-          2024年2月3日 下午
+        <time datetime="2024-02-07 14:39" pubdate>
+          2024年2月7日 下午
         </time>
       </span>
     
@@ -251,7 +251,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          324 字
+          303 字
         
       </span>
     
@@ -307,13 +307,31 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">黑马点评</h1>
+            <h1 id="seo-header">Linux配置Neo4j</h1>
             
             
               <div class="markdown-body">
                 
-                <p>在学习黑马的 Reids 时，P37 留了一个课后作业，不过应该写在 service 层里面而不是写在 controller 层里面。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RestController</span><br><span class="hljs-meta">@RequestMapping(&quot;/shop-type&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ShopTypeController</span> &#123;<br>    <span class="hljs-meta">@Resource</span><br>    <span class="hljs-keyword">private</span> IShopTypeService typeService;<br>    <span class="hljs-meta">@Resource</span><br>    <span class="hljs-keyword">private</span> StringRedisTemplate stringRedisTemplate;<br><br>    <span class="hljs-meta">@GetMapping(&quot;list&quot;)</span><br>    <span class="hljs-keyword">public</span> Result <span class="hljs-title function_">queryTypeList</span><span class="hljs-params">()</span> &#123;<br><br>        <span class="hljs-type">String</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> CACHE_SHOP_TYPE_KEY;<br>        <span class="hljs-comment">// 1.查询redis缓存</span><br>        List&lt;String&gt; typeJson = stringRedisTemplate.opsForList().range(key, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>);<br>        <span class="hljs-comment">// 2.判断是否命中</span><br>        <span class="hljs-keyword">if</span> (CollectionUtil.isNotEmpty(typeJson)) &#123;<br>            <span class="hljs-comment">// 2.0 如果为空对象(防止缓存穿透时存入的空对象)</span><br>            <span class="hljs-keyword">if</span> (StrUtil.isBlank(typeJson.get(<span class="hljs-number">0</span>))) &#123;<br>                <span class="hljs-keyword">return</span> Result.fail(<span class="hljs-string">&quot;商品分类信息为空！&quot;</span>);<br>            &#125;<br>            <span class="hljs-comment">// 2.1 命中则转换List&lt;String&gt; -&gt; List&lt;ShopType&gt; 并返回、</span><br>            List&lt;ShopType&gt; typeList = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>            <span class="hljs-keyword">for</span> (String jsonString : typeJson) &#123;<br>                <span class="hljs-type">ShopType</span> <span class="hljs-variable">shopType</span> <span class="hljs-operator">=</span> JSONUtil.toBean(jsonString, ShopType.class);<br>                typeList.add(shopType);<br>            &#125;<br>            <span class="hljs-keyword">return</span> Result.ok(typeList);<br>        &#125;<br>        <span class="hljs-comment">// 3. 未命中，查询数据库</span><br>        List&lt;ShopType&gt; typeList = typeService.query().orderByAsc(<span class="hljs-string">&quot;sort&quot;</span>).list();<br>        <span class="hljs-comment">// 3.1 数据库中不存在</span><br>        <span class="hljs-keyword">if</span> (CollectionUtil.isEmpty(typeList)) &#123;<br>            <span class="hljs-comment">// 添加空对象到redis，解决缓存穿透</span><br>            stringRedisTemplate.opsForList().rightPushAll(key, CollectionUtil.newArrayList(<span class="hljs-string">&quot;&quot;</span>));<br>            stringRedisTemplate.expire(key, CACHE_NULL_TTL, TimeUnit.MINUTES);<br>            <span class="hljs-comment">// 返回错误</span><br>            <span class="hljs-keyword">return</span> Result.fail(<span class="hljs-string">&quot;商品分类信息为空！&quot;</span>);<br>        &#125;<br>        <span class="hljs-comment">// 3.2 数据库中存在,转换List&lt;ShopType&gt; -&gt; List&lt;String&gt; 类型</span><br>        List&lt;String&gt; shopTypeList = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (ShopType shopType : typeList) &#123;<br>            <span class="hljs-type">String</span> <span class="hljs-variable">jsonStr</span> <span class="hljs-operator">=</span> JSONUtil.toJsonStr(shopType);<br>            shopTypeList.add(jsonStr);<br>        &#125;<br>        <span class="hljs-comment">// 4.写入redis缓存, 有顺序只能RPUSH</span><br>        stringRedisTemplate.opsForList().rightPushAll(key, shopTypeList);<br>        <span class="hljs-comment">// 5. 返回</span><br>        <span class="hljs-keyword">return</span> Result.ok(typeList);<br><br><span class="hljs-comment">//        List&lt;ShopType&gt; typeList = typeService</span><br><span class="hljs-comment">//                .query().orderByAsc(&quot;sort&quot;).list();</span><br><span class="hljs-comment">//        return Result.ok(typeList);</span><br>    &#125;<br></code></pre></td></tr></table></figure>
+                <h3 id="1-Docker-镜像准备"><a href="#1-Docker-镜像准备" class="headerlink" title="1.Docker 镜像准备"></a>1.Docker 镜像准备</h3><p>我安装的是 <strong>3.5.5</strong>版本的，所以就是 ：docker pull neo4j:3.5.5</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">//寻找镜像<br>docker search neo4j<br><br>//拉取镜像<br>docker pull neo4j(:版本号) //缺省 “:版本号” 时默认安装latest版本的<br><br>//查看镜像<br>docker images<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="2、启动配置修改"><a href="#2、启动配置修改" class="headerlink" title="2、启动配置修改"></a>2、启动配置修改</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">docker <span class="hljs-keyword">run</span><span class="language-bash"> -d --name container_name \  //-d表示容器后台运行 --name指定容器名字</span><br>    -p <span class="hljs-number">7474</span>:<span class="hljs-number">7474</span> -p <span class="hljs-number">7687</span>:<span class="hljs-number">7687</span> \  //映射容器的端口号到宿主机的端口号<br>    -v /home/neo4j/data:/data \  //把容器内的数据目录挂载到宿主机的对应目录下<br>    -v /home/neo4j/logs:/logs \  //挂载日志目录<br>    -v /home/neo4j/conf:/var/lib/neo4j/conf   //挂载配置目录<br>    -v /home/neo4j/import:/var/lib/neo4j/import \  //挂载数据导入目录<br>    --<span class="hljs-keyword">env</span> NEO4J_AUTH=neo4j/password \  //设定数据库的名字的访问密码<br>    neo4j:<span class="hljs-number">4.2</span>.<span class="hljs-number">2</span> //指定使用的镜像 及版本号  默认laster<br></code></pre></td></tr></table></figure>
+
+<p>我的运行命令是：NEO4J_AUTH是可以指定的</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs kotlin">docker run -d --name neo4j -p <span class="hljs-number">7474</span>:<span class="hljs-number">7474</span> -p <span class="hljs-number">7687</span>:<span class="hljs-number">7687</span> -v /opt/elastdocker-<span class="hljs-number">1.19</span><span class="hljs-number">.0</span>/elasticsearch/<span class="hljs-keyword">data</span>/neo4j/<span class="hljs-keyword">data</span>:/<span class="hljs-keyword">data</span> -v /opt/elastdocker-<span class="hljs-number">1.19</span><span class="hljs-number">.0</span>/elasticsearch/<span class="hljs-keyword">data</span>/neo4j/logs:/logs -v /opt/elastdocker-<span class="hljs-number">1.19</span><span class="hljs-number">.0</span>/elasticsearch/<span class="hljs-keyword">data</span>/neo4j/conf:/<span class="hljs-keyword">var</span>/lib/neo4j/conf -v /opt/elastdocker-<span class="hljs-number">1.19</span><span class="hljs-number">.0</span>/elasticsearch/<span class="hljs-keyword">data</span>/neo4j/<span class="hljs-keyword">import</span>:/<span class="hljs-keyword">var</span>/lib/neo4j/<span class="hljs-keyword">import</span> --env NEO4J_AUTH=neo4j/<span class="hljs-number">200381</span> neo4j<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-查看是否成功运行"><a href="#3-查看是否成功运行" class="headerlink" title="3.查看是否成功运行"></a>3.查看是否成功运行</h3><p><strong>输入：</strong>docker ps 查看以运行的容器</p>
+<img src="/2024/02/07/Linux%E9%85%8D%E7%BD%AENeo4j/s1.jpg" srcset="/img/loading.gif" lazyload class="">
+
+
+
+<h3 id="4-浏览器查看"><a href="#4-浏览器查看" class="headerlink" title="4.浏览器查看"></a>4.浏览器查看</h3><p><a target="_blank" rel="noopener" href="http://ip:7474/browser/">http://IP:7474/browser/</a></p>
+<img src="/2024/02/07/Linux%E9%85%8D%E7%BD%AENeo4j/s2.jpg" srcset="/img/loading.gif" lazyload class="">
+
 
                 
               </div>
@@ -322,32 +340,11 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Redis/" class="category-chain-item">Redis</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E9%BB%91%E9%A9%AC%E7%82%B9%E8%AF%84/" class="print-no-link">#黑马点评</a>
+        <a href="/tags/Neo4j/" class="print-no-link">#Neo4j</a>
       
     </div>
   
@@ -359,8 +356,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>黑马点评</div>
-      <div>https://1deslre.github.io/2024/02/03/黑马点评/</div>
+      <div>Linux配置Neo4j</div>
+      <div>https://1deslre.github.io/2024/02/07/Linux配置Neo4j/</div>
     </div>
     <div class="license-meta">
       
@@ -372,7 +369,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月3日</div>
+          <div>2024年2月7日</div>
         </div>
       
       
@@ -404,18 +401,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/07/Linux%E9%85%8D%E7%BD%AENeo4j/" title="Linux配置Neo4j">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux配置Neo4j</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/29/Boot%E6%95%B4%E5%90%88Redis%E6%90%AD%E5%BB%BA/" title="测试">
-                        <span class="hidden-mobile">测试</span>
+                      <a href="/2024/02/03/%E9%BB%91%E9%A9%AC%E7%82%B9%E8%AF%84/" title="黑马点评">
+                        <span class="hidden-mobile">黑马点评</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
