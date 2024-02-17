@@ -16,16 +16,16 @@
   <meta name="author" content="肖">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Docker配置Neo4j">
+    <meta name="description" content="每日一面">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java面试题">
+<meta property="og:title" content="Java面试题1">
 <meta property="og:url" content="https://1deslre.github.io/2024/02/17/Java%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="deslre">
-<meta property="og:description" content="Docker配置Neo4j">
+<meta property="og:description" content="每日一面">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://1deslre.github.io/img/2024%E5%B9%B42%E6%9C%8817%E6%97%A509%E7%82%B955%E5%88%86.jpg">
 <meta property="article:published_time" content="2024-02-17T01:54:09.000Z">
-<meta property="article:modified_time" content="2024-02-17T03:32:59.771Z">
+<meta property="article:modified_time" content="2024-02-17T05:52:42.958Z">
 <meta property="article:author" content="肖">
 <meta property="article:tag" content="八股文">
 <meta name="twitter:card" content="summary_large_image">
@@ -33,7 +33,7 @@
   
   
   
-  <title>Java面试题 - deslre</title>
+  <title>Java面试题1 - deslre</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -228,7 +228,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java面试题"></span>
+            <span id="subtitle" data-typed-text="Java面试题1"></span>
           
         </div>
 
@@ -307,7 +307,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Java面试题</h1>
+            <h1 id="seo-header">Java面试题1</h1>
             
             
               <div class="markdown-body">
@@ -315,11 +315,10 @@
                 <h3 id="1-string-常用的方法有哪些？"><a href="#1-string-常用的方法有哪些？" class="headerlink" title="1.string 常用的方法有哪些？"></a>1.string 常用的方法有哪些？</h3><p>​		indexOf()：返回指定字符的索引。 charAt()：返回指定索引处的字符。 replace()：字符串替换。 trim()：去除字符串两端空白。 split()：分割字符串，返回一个分割后的字符串数组。 getBytes()：返回字符串的 byte 类型数组。 length()：返回字符串长度。 toLowerCase()：将字符串转成小写字母。 toUpperCase()：将字符串转成大写字符。 substring()：截取字符串。 equals()：字符串比较。</p>
 <h3 id="2-ThreadLocal-的原理"><a href="#2-ThreadLocal-的原理" class="headerlink" title="2.ThreadLocal 的原理"></a>2.ThreadLocal 的原理</h3><p>​		ThreadLocal：为共享变量在每个线程中创建一个副本，每个线程都可以访问自己内部的副本变量。通过 threadlocal 保证线程的安全性。 其实在 ThreadLocal 类中有一个静态内部类 ThreadLocalMap(其类似于Map)，用键值对的形式存储每一个线程的变量副本，ThreadLocalMap 中元素的key 为当前ThreadLocal 对象，而 value 对应线程的变量副本。 ThreadLocal 本身并不存储值，它只是作为一个 key 保存到ThreadLocalMap中，但是这里要注意的是它作为一个 key 用的是弱引用，因为没有强引用链，弱引用在GC的时候可能会被回收。这样就会在 ThreadLocalMap 中存在一些key 为null 的键值对（Entry）。因为 key 变成 null 了，我们是没法访问这些 Entry 的，但是这些Entry 本身是不会被清除的。如果没有手动删除对应 key 就会导致这块内存即不会回收也无法访问，也就是内存泄漏。 使用完 ThreadLocal 之后，记得调用 remove 方法。 在不使用线程池的前提下，即使不调用 remove 方法，线程的”变量副本”也会被 gc 回收，即不会造成内存泄漏的情况。</p>
 <h3 id="3-线程池的拒绝策略有哪些？"><a href="#3-线程池的拒绝策略有哪些？" class="headerlink" title="3.线程池的拒绝策略有哪些？"></a>3.线程池的拒绝策略有哪些？</h3><p>主要有4种拒绝策略： </p>
-<pre><code class="hljs">1. AbortPolicy：直接丢弃任务，抛出异常，这是默认策略 
-1.  CallerRunsPolicy：只用调用者所在的线程来处理任务 
-1.  DiscardOldestPolicy：丢弃等待队列中最旧的任务，并执行当前任务 
-1. DiscardPolicy：直接丢弃任务，也不抛出异常
-</code></pre>
+<p>​	1.AbortPolicy：直接丢弃任务，抛出异常，这是默认策略 </p>
+<p>​	2.CallerRunsPolicy：只用调用者所在的线程来处理任务 </p>
+<p>​	3.DiscardOldestPolicy：丢弃等待队列中最旧的任务，并执行当前任务 </p>
+<p>​	4.DiscardPolicy：直接丢弃任务，也不抛出异常</p>
 <h3 id="4-什么是线程安全"><a href="#4-什么是线程安全" class="headerlink" title="4.什么是线程安全"></a>4.什么是线程安全</h3><p>线程安全就是说多线程访问同一段代码，不会产生不确定的结果。</p>
 <p> 又是一个理论的问题，各式各样的答案有很多，我给出一个个人认为解释地最好的：如果你的代码 在多线程下执行和在单线程下执行永远都能获得一样的结果，那么你的代码就是线程安全的。 这个问题有值得一提的地方，就是线程安全也是有几个级别的：</p>
 <p> （1）不可变 像String、Integer、Long这些，都是final类型的类，任何一个线程都改变不了它们的值，要改变除 非新创建一个，因此这些不可变对象不需要任何同步手段就可以直接在多线程环境下使用 </p>
@@ -424,7 +423,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Java面试题</div>
+      <div>Java面试题1</div>
       <div>https://1deslre.github.io/2024/02/17/Java面试题/</div>
     </div>
     <div class="license-meta">
@@ -468,6 +467,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/02/17/Java%E9%9D%A2%E8%AF%95%E9%A2%982/" title="Java面试题2">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java面试题2</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
