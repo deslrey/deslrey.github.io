@@ -16,24 +16,24 @@
   <meta name="author" content="肖">
   <meta name="keywords" content="">
   
-    <meta name="description" content="每日一面">
+    <meta name="description" content="Neo4j命令学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java面试题2">
-<meta property="og:url" content="https://1deslre.github.io/2024/02/17/Java%E9%9D%A2%E8%AF%95%E9%A2%982/index.html">
+<meta property="og:title" content="Neo4j基础命令">
+<meta property="og:url" content="https://1deslre.github.io/2024/02/23/Neo4j%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="deslre">
-<meta property="og:description" content="每日一面">
+<meta property="og:description" content="Neo4j命令学习">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://1deslre.github.io/img/2024%E5%B9%B42%E6%9C%8817%E6%97%A513%E7%82%B948%E5%88%86.jpg">
-<meta property="article:published_time" content="2024-02-17T05:48:24.000Z">
-<meta property="article:modified_time" content="2024-02-18T07:58:45.370Z">
+<meta property="og:image" content="https://1deslre.github.io/img/2024%E5%B9%B42%E6%9C%8823%E6%97%A510%E7%82%B926%E5%88%86.jpg">
+<meta property="article:published_time" content="2024-02-23T02:26:07.000Z">
+<meta property="article:modified_time" content="2024-02-23T03:06:02.337Z">
 <meta property="article:author" content="肖">
-<meta property="article:tag" content="八股文">
+<meta property="article:tag" content="Neo4j">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://1deslre.github.io/img/2024%E5%B9%B42%E6%9C%8817%E6%97%A513%E7%82%B948%E5%88%86.jpg">
+<meta name="twitter:image" content="https://1deslre.github.io/img/2024%E5%B9%B42%E6%9C%8823%E6%97%A510%E7%82%B926%E5%88%86.jpg">
   
   
   
-  <title>Java面试题2 - deslre</title>
+  <title>Neo4j基础命令 - deslre</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -228,7 +228,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java面试题2"></span>
+            <span id="subtitle" data-typed-text="Neo4j基础命令"></span>
           
         </div>
 
@@ -239,8 +239,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-17 13:48" pubdate>
-          2024年2月17日 下午
+        <time datetime="2024-02-23 10:26" pubdate>
+          2024年2月23日 上午
         </time>
       </span>
     
@@ -251,7 +251,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          1.2k 字
         
       </span>
     
@@ -262,7 +262,7 @@
         
         
         
-          9 分钟
+          11 分钟
         
       </span>
     
@@ -307,29 +307,70 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Java面试题2</h1>
+            <h1 id="seo-header">Neo4j基础命令</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="实现一个函数式接口有哪几种方法？"><a href="#实现一个函数式接口有哪几种方法？" class="headerlink" title="实现一个函数式接口有哪几种方法？"></a>实现一个函数式接口有哪几种方法？</h3><p>三种方式：</p>
-<p>​	1.通过一个类来实现，包括常规的类和匿名内部类</p>
-<p>​	2.通过lambda表达式来实现</p>
-<p>​	3.通过方法引用来实现</p>
-<h3 id="List-和-Map、Set-的实现类"><a href="#List-和-Map、Set-的实现类" class="headerlink" title="List 和 Map、Set 的实现类"></a>List 和 Map、Set 的实现类</h3><p>​	List 有序, 可重复 ArrayList 优点: 底层数据结构是数组，查询快，增删慢。 13 缺点: 线程不安全，效率高 Vector 优点: 底层数据结构是数组，查询快，增删慢。 缺点: 线程安全，效率低, 已给舍弃了 LinkedList 优点: 底层数据结构是链表，查询慢，增删快。 缺点: 线程不安全，效率高 Set 无序,唯一 HashSet 底层数据结构是哈希表。(无序,唯一) 如何来保证元素唯一性? 依赖两个方法：hashCode()和 equals() LinkedHashSet 底层数据结构是链表和哈希表。(FIFO 插入有序,唯一) 1.由链表保证元素有序 2.由哈希表保证元素唯一 TreeSet 底层数据结构是红黑树。(唯一，有序) 1. 如何保证元素排序的呢? 自然排序 比较器排序 2.如何保证元素唯一性的呢? 根据比较的返回值是否是 0 来决定  Map 接口有四个实现类： HashMap 基于 hash 表的 Map 接口实现，非线程安全，高效，支持 null 值和 null 键， 线程 不安全。 HashTable 线程安全，低效，不支持 null 值和 null 键； LinkedHashMap 线程不安全，是 HashMap 的一个子类，保存了记录的插入顺序； TreeMap 能够把它保存的记录根据键排序，默认是键值的升序排序，线程不安全</p>
-<h3 id="Reids提供持久化有两种，那应该怎么选择呢"><a href="#Reids提供持久化有两种，那应该怎么选择呢" class="headerlink" title="Reids提供持久化有两种，那应该怎么选择呢"></a>Reids提供持久化有两种，那应该怎么选择呢</h3><ol>
-<li><p>不要仅仅使用 RDB ，因为那样会导致你丢失很多数据。 </p>
-</li>
-<li><p>也不要仅仅使用 AOF ，因为那样有两个问题，第一，你通过 AOF 做冷备没有 RDB 做冷备的恢 复速度更快; 第二， RDB 每次简单粗暴生成数据快照，更加健壮，可以避免 AOF 这种复杂的备 份和恢复机制的 bug 。 </p>
-</li>
-<li><p>Redis 支持同时开启开启两种持久化方式，我们可以综合使用 AOF 和 RDB 两种持久化机制， 用 AOF 来保证数据不丢失，作为数据恢复的第一选择; 用 RDB 来做不同程度的冷备，在 AOF 文件都丢失或损坏不可用的时候，还可以使用 RDB 来进行快速的数据恢复。 </p>
-</li>
-<li><p>如果同时使用 RDB 和 AOF 两种持久化机制，那么在 Redis 重启的时候，会使用 AOF 来重新 构建数据，因为 AOF 中的数据更加完整。</p>
-</li>
+                <h2 id="Neo4J实战教程"><a href="#Neo4J实战教程" class="headerlink" title="Neo4J实战教程"></a>Neo4J实战教程</h2><p>这个案例的节点主要包括人物和城市两类，人物和人物之间有朋友、夫妻等关系，人物和城市之间有出生地的关系。</p>
+<ol>
+<li>首先，我们删除数据库中以往的图，确保一个空白的环境进行操作： <code>MATCH (n) DETACH DELETE n</code><br>这里，<code>MATCH</code>是匹配操作，而小括号()代表一个节点node（可理解为括号类似一个圆形），括号里面的n为标识符。</li>
+<li>接着，我们创建一个人物节点：<br><code>CREATE (n:Person &#123;name:&#39;John&#39;&#125;) RETURN n</code></li>
 </ol>
-<h3 id="缓存更新"><a href="#缓存更新" class="headerlink" title="缓存更新"></a>缓存更新</h3><p>​	缓存预热就是系统上线后，将相关的缓存数据直接加载到缓存系统。这样就可以避免在用户请求的时候， 先查询数据库，然后再将数据缓存的问题！用户直接查询事先被预热的缓存数据</p>
-<h3 id="缓存降级"><a href="#缓存降级" class="headerlink" title="缓存降级"></a>缓存降级</h3><p>缓存更新除了缓存服务器自带的缓存失效策略之外（Redis 默认的有 6 中策略可供选择），我们还可以 根据具体的业务需求进行自定义的缓存淘汰，常见的策略有两种： （1）定时去清理过期的缓存； （2）当有用户请求过来时，再判断这个请求所用到的缓存是否过期，过期的话就去底层系统得到新数 据并更新缓存</p>
-<h3 id="缓存降级-1"><a href="#缓存降级-1" class="headerlink" title="缓存降级"></a>缓存降级</h3><p>当访问量剧增、服务出现问题（如响应时间慢或不响应）或非核心服务影响到核心流程的性能时，仍然 需要保证服务还是可用的，即使是有损服务。系统可以根据一些关键数据进行自动降级，也可以配置开 关实现人工降级。降级的最终目的是保证核心服务可用，即使是有损的。而且有些服务是无法降级的 （如加入购物车、结算）</p>
+<p><code>CREATE</code>是创建操作，<code>Person</code>是标签，代表节点的类型。花括号{}代表节点的属性，属性类似Python的字典。这条语句的含义就是创建一个标签为Person的节点，该节点具有一个name属性，属性值是John。</p>
+<ol start="3">
+<li>我们继续来创建更多的人物节点，并分别命名：</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css">CREATE (n:Person &#123;name:<span class="hljs-string">&#x27;Sally&#x27;</span>&#125;) RETURN n;<br>CREATE (n:Person &#123;name:<span class="hljs-string">&#x27;Steve&#x27;</span>&#125;) RETURN n;<br>CREATE (n:Person &#123;name:<span class="hljs-string">&#x27;Mike&#x27;</span>&#125;) RETURN n;<br>CREATE (n:Person &#123;name:<span class="hljs-string">&#x27;Liz&#x27;</span>&#125;) RETURN n;<br>CREATE (n:Person &#123;name:<span class="hljs-string">&#x27;Shawn&#x27;</span>&#125;) RETURN n;<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>接下来创建地区节点</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-title function_ invoke__">CREATE</span> (<span class="hljs-attr">n</span>:Location &#123;<span class="hljs-attr">city</span>:<span class="hljs-string">&#x27;Miami&#x27;</span>, <span class="hljs-attr">state</span>:<span class="hljs-string">&#x27;FL&#x27;</span>&#125;)<br><span class="hljs-title function_ invoke__">CREATE</span> (<span class="hljs-attr">n</span>:Location &#123;<span class="hljs-attr">city</span>:<span class="hljs-string">&#x27;Boston&#x27;</span>, <span class="hljs-attr">state</span>:<span class="hljs-string">&#x27;MA&#x27;</span>&#125;)<br><span class="hljs-title function_ invoke__">CREATE</span> (<span class="hljs-attr">n</span>:Location &#123;<span class="hljs-attr">city</span>:<span class="hljs-string">&#x27;Lynn&#x27;</span>, <span class="hljs-attr">state</span>:<span class="hljs-string">&#x27;MA&#x27;</span>&#125;)<br><span class="hljs-title function_ invoke__">CREATE</span> (<span class="hljs-attr">n</span>:Location &#123;<span class="hljs-attr">city</span>:<span class="hljs-string">&#x27;Portland&#x27;</span>, <span class="hljs-attr">state</span>:<span class="hljs-string">&#x27;ME&#x27;</span>&#125;)<br><span class="hljs-title function_ invoke__">CREATE</span> (<span class="hljs-attr">n</span>:Location &#123;<span class="hljs-attr">city</span>:<span class="hljs-string">&#x27;San Francisco&#x27;</span>, <span class="hljs-attr">state</span>:<span class="hljs-string">&#x27;CA&#x27;</span>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>可以看到，节点类型为Location，属性包括city和state。 5. 接下来创建关系</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Liz&#x27;</span>&#125;), <br>      (<span class="hljs-selector-tag">b</span>:Person &#123;name:<span class="hljs-string">&#x27;Mike&#x27;</span>&#125;) <br>MERGE (<span class="hljs-selector-tag">a</span>)-<span class="hljs-selector-attr">[:FRIENDS]</span>-&gt;(<span class="hljs-selector-tag">b</span>)<br></code></pre></td></tr></table></figure>
+
+<p>这里的方括号<code>[]</code>即为关系，<code>FRIENDS</code>为关系的类型。注意这里的箭头<code>--&gt;</code>是有方向的，表示是从a到b的关系。 如 6. 关系也可以增加属性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Shawn&#x27;</span>&#125;), <br>      (<span class="hljs-selector-tag">b</span>:Person &#123;name:<span class="hljs-string">&#x27;Sally&#x27;</span>&#125;) <br>MERGE (<span class="hljs-selector-tag">a</span>)-<span class="hljs-selector-attr">[:FRIENDS &#123;since:2001&#125;]</span>-&gt;(<span class="hljs-selector-tag">b</span>)<br></code></pre></td></tr></table></figure>
+
+<p>在关系中，同样的使用花括号{}来增加关系的属性，也是类似Python的字典，这里给FRIENDS关系增加了since属性，属性值为2001，表示他们建立朋友关系的时间。</p>
+<ol>
+<li>接下来增加更多的关系</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css">MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Shawn&#x27;</span>&#125;), (<span class="hljs-selector-tag">b</span>:Person &#123;name:<span class="hljs-string">&#x27;John&#x27;</span>&#125;) MERGE (<span class="hljs-selector-tag">a</span>)-<span class="hljs-selector-attr">[:FRIENDS &#123;since:2012&#125;]</span>-&gt;(<span class="hljs-selector-tag">b</span>)<br>MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Mike&#x27;</span>&#125;), (<span class="hljs-selector-tag">b</span>:Person &#123;name:<span class="hljs-string">&#x27;Shawn&#x27;</span>&#125;) MERGE (<span class="hljs-selector-tag">a</span>)-<span class="hljs-selector-attr">[:FRIENDS &#123;since:2006&#125;]</span>-&gt;(<span class="hljs-selector-tag">b</span>)<br>MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Sally&#x27;</span>&#125;), (<span class="hljs-selector-tag">b</span>:Person &#123;name:<span class="hljs-string">&#x27;Steve&#x27;</span>&#125;) MERGE (<span class="hljs-selector-tag">a</span>)-<span class="hljs-selector-attr">[:FRIENDS &#123;since:2006&#125;]</span>-&gt;(<span class="hljs-selector-tag">b</span>)<br>MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Liz&#x27;</span>&#125;), (<span class="hljs-selector-tag">b</span>:Person &#123;name:<span class="hljs-string">&#x27;John&#x27;</span>&#125;) MERGE (<span class="hljs-selector-tag">a</span>)-<span class="hljs-selector-attr">[:MARRIED &#123;since:1998&#125;]</span>-&gt;(<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>然后，我们需要建立不同类型节点之间的关系-人物和地点的关系</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;John&#x27;</span>&#125;), (<span class="hljs-selector-tag">b</span>:Location &#123;city:<span class="hljs-string">&#x27;Boston&#x27;</span>&#125;) MERGE (<span class="hljs-selector-tag">a</span>)-<span class="hljs-selector-attr">[:BORN_IN &#123;year:1978&#125;]</span>-&gt;(<span class="hljs-selector-tag">b</span>)<br></code></pre></td></tr></table></figure>
+
+<p>这里的关系是BORN_IN，表示出生地，同样有一个属性，表示出生年份。 9. 同样建立更多人的出生地</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css">MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Liz&#x27;</span>&#125;), (<span class="hljs-selector-tag">b</span>:Location &#123;city:<span class="hljs-string">&#x27;Boston&#x27;</span>&#125;) MERGE (<span class="hljs-selector-tag">a</span>)-<span class="hljs-selector-attr">[:BORN_IN &#123;year:1981&#125;]</span>-&gt;(<span class="hljs-selector-tag">b</span>)<br>MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Mike&#x27;</span>&#125;), (<span class="hljs-selector-tag">b</span>:Location &#123;city:<span class="hljs-string">&#x27;San Francisco&#x27;</span>&#125;) MERGE (<span class="hljs-selector-tag">a</span>)-<span class="hljs-selector-attr">[:BORN_IN &#123;year:1960&#125;]</span>-&gt;(<span class="hljs-selector-tag">b</span>)<br>MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Shawn&#x27;</span>&#125;), (<span class="hljs-selector-tag">b</span>:Location &#123;city:<span class="hljs-string">&#x27;Miami&#x27;</span>&#125;) MERGE (<span class="hljs-selector-tag">a</span>)-<span class="hljs-selector-attr">[:BORN_IN &#123;year:1960&#125;]</span>-&gt;(<span class="hljs-selector-tag">b</span>)<br>MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Steve&#x27;</span>&#125;), (<span class="hljs-selector-tag">b</span>:Location &#123;city:<span class="hljs-string">&#x27;Lynn&#x27;</span>&#125;) MERGE (<span class="hljs-selector-tag">a</span>)-<span class="hljs-selector-attr">[:BORN_IN &#123;year:1</span><br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>至此，知识图谱的数据已经插入完毕，可以开始做查询了。我们查询下所有在Boston出生的人物 <code>MATCH (a:Person)-[:BORN_IN]-&gt;(b:Location &#123;city:&#39;Boston&#39;&#125;) RETURN a,b</code></li>
+<li>查询所有对外有关系的节点 <code>MATCH (a)--&gt;() RETURN a</code><br>注意这里箭头的方向，返回结果不含任何地区节点，因为地区并没有指向其他节点（只是被指向）</li>
+<li>查询所有有关系的节点 <code>MATCH (a)--() RETURN a</code></li>
+<li>查询所有对外有关系的节点，以及关系类型 <code>MATCH (a)-[r]-&gt;() RETURN a.name, type(r)</code></li>
+<li>查询所有有结婚关系的节点 <code>MATCH (n)-[:MARRIED]-() RETURN n</code></li>
+<li>创建节点的时候就建好关系 <code>CREATE (a:Person &#123;name:&#39;Todd&#39;&#125;)-[r:FRIENDS]-&gt;(b:Person &#123;name:&#39;Carlos&#39;&#125;)</code></li>
+<li>查找某人的朋友的朋友 <code>MATCH (a:Person &#123;name:&#39;Mike&#39;&#125;)-[r1:FRIENDS]-()-[r2:FRIENDS]-(friend_of_a_friend) RETURN</code></li>
+<li>增加&#x2F;修改节点的属性</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css">MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Liz&#x27;</span>&#125;) SET <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.age</span>=<span class="hljs-number">34</span><br>MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Shawn&#x27;</span>&#125;) SET <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.age</span>=<span class="hljs-number">32</span><br>MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;John&#x27;</span>&#125;) SET <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.age</span>=<span class="hljs-number">44</span><br>MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Mike&#x27;</span>&#125;) SET <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.age</span>=<span class="hljs-number">25</span><br></code></pre></td></tr></table></figure>
+
+<p>这里，SET表示修改操作</p>
+<ol>
+<li>删除节点的属性</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Mike&#x27;</span>&#125;) SET <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.test</span>=&#x27;test&#x27;<br>MATCH (<span class="hljs-selector-tag">a</span>:Person &#123;name:<span class="hljs-string">&#x27;Mike&#x27;</span>&#125;) REMOVE <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.test</span><br></code></pre></td></tr></table></figure>
+
+<p>删除属性操作主要通过REMOVE</p>
+<ol>
+<li>删除节点 <code>MATCH (a:Location &#123;city:&#39;Portland&#39;&#125;) DELETE a</code><br>删除节点操作是DELETE</li>
+<li>删除有关系的节点 <code>MATCH (a:Person &#123;name:&#39;Todd&#39;&#125;)-[rel]-(b:Person) DELETE a,b,rel</code></li>
+</ol>
 
                 
               </div>
@@ -348,7 +389,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%85%AB%E8%82%A1%E6%96%87/" class="category-chain-item">八股文</a>
+  <a href="/categories/Neo4j/" class="category-chain-item">Neo4j</a>
   
   
 
@@ -363,7 +404,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/" class="print-no-link">#八股文</a>
+        <a href="/tags/Neo4j/" class="print-no-link">#Neo4j</a>
       
     </div>
   
@@ -375,8 +416,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Java面试题2</div>
-      <div>https://1deslre.github.io/2024/02/17/Java面试题2/</div>
+      <div>Neo4j基础命令</div>
+      <div>https://1deslre.github.io/2024/02/23/Neo4j基础命令/</div>
     </div>
     <div class="license-meta">
       
@@ -388,7 +429,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月17日</div>
+          <div>2024年2月23日</div>
         </div>
       
       
