@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>CentOS7离线安装Python3环境</title>
+    <link href="/2024/08/09/CentOS7%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85Python3%E7%8E%AF%E5%A2%83/"/>
+    <url>/2024/08/09/CentOS7%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85Python3%E7%8E%AF%E5%A2%83/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-安装环境准备"><a href="#1-安装环境准备" class="headerlink" title="1.安装环境准备"></a>1.安装环境准备</h2><p>python3环境依赖包：py3_lib.tar.gz</p><p>python3安装包：Python-3.9.9.tar.xz</p><p>百度网盘链接：<a href="https://pan.baidu.com/s/1ZVPsCw5UtHbWr2VpmidgVw?pwd=w5hi">https://pan.baidu.com/s/1ZVPsCw5UtHbWr2VpmidgVw?pwd=w5hi</a> </p><h2 id="2-上传python3环境依赖包和安装包，并解压"><a href="#2-上传python3环境依赖包和安装包，并解压" class="headerlink" title="2.上传python3环境依赖包和安装包，并解压"></a>2.上传python3环境依赖包和安装包，并解压</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">先创建文件夹</span><br>mkdir /usr/local/python3<br> <br>cd /usr/local/python3<br><span class="hljs-meta prompt_"># </span><span class="language-bash">上传python环境依赖包到此目录下,解压</span><br>tar -zxvf py3_lib.tar.gz<br><span class="hljs-meta prompt_">#</span><span class="language-bash">进入解压目录</span><br>cd py3<br><span class="hljs-meta prompt_">#</span><span class="language-bash">强制安装全部依赖</span><br>rpm -ivh *.rpm --force --nodeps<br> <br>cd /usr/local/python3<br><span class="hljs-meta prompt_"># </span><span class="language-bash">上传python3安装包到此目录下,解压</span><br>tar -xvJf  Python-3.9.9.tar.xz<br><span class="hljs-meta prompt_">#</span><span class="language-bash">进入解压目录</span><br>cd Python-3.9.9<br><span class="hljs-meta prompt_">#</span><span class="language-bash">开始安装python3</span><br>./configure --prefix=/usr/local/python3<br><span class="hljs-meta prompt_">#</span><span class="language-bash">执行此命令需要gcc可先查看当前Linux是否安装gcc: gcc -v</span><br>make &amp;&amp; make install<br></code></pre></td></tr></table></figure><p>执行成功会出现 <strong>Successfully</strong></p><img src="/2024/08/09/CentOS7%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85Python3%E7%8E%AF%E5%A2%83/s2.jpg" class=""><h2 id="3-配置软连接，并检查是否安装成功"><a href="#3-配置软连接，并检查是否安装成功" class="headerlink" title="3.配置软连接，并检查是否安装成功"></a>3.配置软连接，并检查是否安装成功</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">创建软连接</span><br>ln -s /usr/local/python3/bin/python3 /usr/bin/python3<br>ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3<br><span class="hljs-meta prompt_">#</span><span class="language-bash">验证版本</span><br>python3<br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看版本</span><br>python3 -V<br>pip3 -V<br></code></pre></td></tr></table></figure><h2 id="4-其他情况"><a href="#4-其他情况" class="headerlink" title="4.其他情况"></a>4.其他情况</h2><p>执行 ：<code>./configure --prefix=/usr/local/python3 </code> 结束的数据会提示：</p><img src="/2024/08/09/CentOS7%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85Python3%E7%8E%AF%E5%A2%83/s1.jpg" class=""><p>出现次状况不要去执行他给的命令，忽略就好，要不然最后的 <code>make &amp;&amp; make install</code> 会执行失败</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Python3</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CentOS安装RabbitMQ</title>
     <link href="/2024/07/11/CentOS%E5%AE%89%E8%A3%85RabbitMQ/"/>
     <url>/2024/07/11/CentOS%E5%AE%89%E8%A3%85RabbitMQ/</url>
